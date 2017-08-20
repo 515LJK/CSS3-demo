@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>你的名字</title>
+</head>
+<style>
+* {
+	margin:0;
+	padding:0;
+}
+.wrap {
+	width:780px;
+	height:560px;
+	margin:0 auto;
+	position:relative;
+}
+.text {
+	position: absolute;
+	top:80px;
+	left:140px;
+	width:500px;
+	height:400px;
+	line-height: 400px;
+	text-align: center;
+	z-index:10;
+	background-image:-webkit-linear-gradient(left,blue,red 25%,blue 50%,red 75%,blue 100%);
+	-webkit-background-clip: text;
+	background-size:200% 100%;
+	-webkit-animation:move 2s linear infinite;
+}
+.text p {
+	font-size: 20px;
+	color:transparent;
+	display: none;
+}
+.text2 {
+	position: absolute;
+	top:80px;
+	left:140px;
+	width:500px;
+	height:400px;
+	z-index:10;
+}
+.text:before {
+	content:'';
+	display: block;
+	position: absolute;
+	width:0;
+	height:2px;
+	background: white;
+	transition: all 1s;
+	left:50%;
+}
+.text:after {
+	content:'';
+	display: block;
+	position: absolute;
+	width:0;
+	height:2px;
+	background: white;
+	transition: all 1s;
+	left:50%;
+}
+.text2:after {
+	content:'';
+	display: block;
+	position: absolute;
+	width:2px;
+	height:0;
+	background: white;
+	top:50%;
+	left:0;
+	transition: all 1s;
+}
+.text2:before {
+	content:'';
+	display: block;
+	position: absolute;
+	width:2px;
+	height:0;
+	background: white;
+	top:50%;
+	right:0;
+	transition: all 1s;
+}
+
+.wrap:hover .text:before{
+	width:100%;
+	left:0;
+}
+.wrap:hover .text:after{
+	width:100%;
+	left:0;
+}
+.wrap:hover .text2:before{
+	height:100%;
+	top:0;
+}
+.wrap:hover .text2:after{
+	height:100%;
+	top:0;
+}
+.img {
+	transition:all 1s;
+}
+.wrap:hover .img{
+	-webkit-filter: blur(2px);
+}
+.wrap:hover p{
+	display: block;
+}
+@keyframes move {
+    0%  {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -100% 0;
+    }
+}
+</style>
+<body>
+<div class="wrap">
+	<div class="text">
+		<p>不管你在世界的哪个地方，我一定会，再次去见你的</p>
+	</div>
+	<div class="text2"></div>
+	<img class="img" src="6a.jpg" height="560" width="780" alt="">
+</div>
+</body>
+</html>

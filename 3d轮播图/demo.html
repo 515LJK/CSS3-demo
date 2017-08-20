@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+body { -webkit-perspective: 3000px;-webkit-perspective-origin: 50% 50%; }
+.wrap {width:600px; height:400px; margin:0 auto; position:relative; -webkit-transform-style:preserve-3d;transition:all 1s linear;}
+.wrap img { width:100%; height:100%; position: absolute;-webkit-backface-visibility: visible;}
+</style>
+<script>
+	window.onload = function(){
+		var Oimg = document.getElementsByTagName('img');
+		var Owrap = document.getElementsByTagName('div')[0];
+		var num = 0;
+
+		for( var i=0;i<Oimg.length;i++ ){
+			Oimg[i].style.WebkitTransform = 'rotateY('+(i*45)+'deg)  translateZ(1200px)';
+		}
+
+		Owrap.onclick = function(){
+			num++;
+			Owrap.style.WebkitTransform = 'rotateY('+(num*-45)+'deg)'
+		}
+
+	}
+</script>
+<body>
+<div class="wrap">
+	<img src="1.jpg"alt="" >
+	<img src="2.jpg"alt="">
+	<img src="3.jpg"alt="">
+	<img src="4.jpg"alt="">
+	<img src="5.jpg"alt="">
+	<img src="6.jpg"alt="">
+	<img src="7.jpg"alt="">
+	<img src="8.jpg"alt="">
+</div>
+</body>
+</html>
